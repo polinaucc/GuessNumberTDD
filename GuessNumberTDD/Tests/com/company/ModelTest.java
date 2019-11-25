@@ -31,10 +31,20 @@ public class ModelTest {
         Assert.assertTrue(model.getMax()==100);
     }
 
-    @Test(expected = Exception.class)
+    @Test(expected = IllegalArgumentException.class)
     public void randMinMoreThanMax() throws Exception {
         model.rand(58, 27);
     }
 
-    
+    @Test
+    public void randSomeNumbers() throws Exception {
+        for(int i=1; i<=1000; i++){
+            for(int j=i+1; j<1000; j++){
+                int rnd = model.rand(i,j);
+                Assert.assertTrue((rnd>=i)&&(rnd<=j));
+            }
+        }
+    }
+
+
 }

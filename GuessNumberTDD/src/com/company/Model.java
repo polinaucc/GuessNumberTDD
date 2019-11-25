@@ -11,6 +11,8 @@ public class Model {
     private int min;
     private int max;
 
+    List<Integer> attempts;
+
     public Model() {
         try {
             unknownNumber = rand();
@@ -62,6 +64,14 @@ public class Model {
 
     public void setUserNumber(int userNumber) {
         this.userNumber = userNumber;
+    }
+
+    public void addAttempt(int number) {
+        this.attempts.add(number);
+    }
+
+    public List<Integer> getAttempts() {
+        return this.attempts;
     }
 }
 
